@@ -1,0 +1,91 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> command
+Rule 1     command -> STOP
+Rule 2     command -> PLAY
+Rule 3     command -> SKIP
+Rule 4     command -> BACK
+Rule 5     command -> VOLUME VALUE
+
+Terminals, with rules where they appear
+
+BACK                 : 4
+PLAY                 : 2
+SKIP                 : 3
+STOP                 : 1
+VALUE                : 5
+VOLUME               : 5
+error                : 
+
+Nonterminals, with rules where they appear
+
+command              : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . command
+    (1) command -> . STOP
+    (2) command -> . PLAY
+    (3) command -> . SKIP
+    (4) command -> . BACK
+    (5) command -> . VOLUME VALUE
+
+    STOP            shift and go to state 2
+    PLAY            shift and go to state 3
+    SKIP            shift and go to state 4
+    BACK            shift and go to state 5
+    VOLUME          shift and go to state 6
+
+    command                        shift and go to state 1
+
+state 1
+
+    (0) S' -> command .
+
+
+
+state 2
+
+    (1) command -> STOP .
+
+    $end            reduce using rule 1 (command -> STOP .)
+
+
+state 3
+
+    (2) command -> PLAY .
+
+    $end            reduce using rule 2 (command -> PLAY .)
+
+
+state 4
+
+    (3) command -> SKIP .
+
+    $end            reduce using rule 3 (command -> SKIP .)
+
+
+state 5
+
+    (4) command -> BACK .
+
+    $end            reduce using rule 4 (command -> BACK .)
+
+
+state 6
+
+    (5) command -> VOLUME . VALUE
+
+    VALUE           shift and go to state 7
+
+
+state 7
+
+    (5) command -> VOLUME VALUE .
+
+    $end            reduce using rule 5 (command -> VOLUME VALUE .)
+
