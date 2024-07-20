@@ -9,8 +9,8 @@ import ply.lex as lex
 import ply.yacc as yacc
 ############################################################################################################################
 #Dane dla spotify'a
-client_id = 'c6f1a1298f164f2e9f60c68d4fd7647e'
-client_secret = '0501b1d770934de8b71878bb93db6803'
+client_id = 'placeholder'
+client_secret = 'placeholder'
 redirect_uri = 'http://localhost:8888/callback/'
 scope = 'user-modify-playback-state'
 ############################################################################################################################
